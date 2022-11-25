@@ -1,0 +1,16 @@
+---
+- name: Playbook to stop and remove apache2 package from web servers
+  hosts: webserversonec2
+  remote_user: ubuntu
+  become: true
+  tasks:
+    - name: Uninstall apache2 package
+      service:
+        name: apache2
+        enabled: false
+        state: stopped
+
+    - name: Remove apache2 package
+      ansible.builtin.apt:
+        name: apache2
+        clean: true 
