@@ -23,6 +23,6 @@
     - name: open firewall
       community.general.ufw:
         rule: allow
-        port: 80
+        port: 8080
         proto: tcp
 
